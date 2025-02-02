@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# Ekip ve Kullanıcı Yönetimi Uygulaması
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, **Vite**, **TypeScript** ve **TanStack Query** (önceden React Query) kullanarak geliştirilmiş bir kullanıcı yönetim uygulamasıdır. Kullanıcıların login olabileceği bir sayfa, veri düzenleme ve silme işlemleri yapabilen bir DataGrid sayfası içerir. Proje, verilerin **Context API** aracılığıyla yönetilmesi, **MUI** (Material UI) komponentleri ile stil düzenlemeleri yapılması ve **styled-components** kullanılarak görselleştirilmesi için gerekli tüm araçları içerir.
 
-Currently, two official plugins are available:
+## Proje Özellikleri
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. **Login Sayfası**
+- Kullanıcılar giriş yapabilir. (Ardında gerçek bir API olması gerekmez.)
+- Giriş işleminde, kullanıcı bilgileri (örneğin; `name` ve `email`) oluşturulup saklanır.
+- Kullanıcı bilgileri, giriş yapıldıktan sonra state içinde saklanır.
 
-## Expanding the ESLint configuration
+### 2. **Veri Yönetimi ve Custom Hooklar**
+- **TanStack Query** kullanılarak **GET**, **POST**, **PUT**, **DELETE** işlemleri gerçekleştirilir.
+- Her bir işlem için özel custom hooklar oluşturulmuştur.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 3. **Navigasyon Barı**
+- Kullanıcılar, uygulamanın farklı sayfaları arasında geçiş yapabilmek için bir navigasyon barı kullanabilirler.
 
-- Configure the top-level `parserOptions` property like this:
+### 4. **Data Grid Sayfası**
+- Public bir API'dan veri çekilir ve bu veriler bir **DataGrid** içerisinde görselleştirilir.
+- Veriler **React Context** içinde saklanır.
+- **DataGrid** sayfasında kullanıcılar verileri düzenleyebilir, ekleyebilir veya silebilir.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 5. **Veri Ekleme, Düzenleme ve Silme**
+- **Add**, **Edit**, **Delete** işlemleri DataGrid'deki verilere uygulanabilir.
+- Veriler, **TanStack Query** ile API'ye gönderilip güncellenir.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 6. **Stillendirme**
+- **MUI** (Material UI) komponentleri kullanılarak uygulama stilize edilmiştir.
+- **styled-components** kullanılarak ekstra özelleştirmeler yapılmıştır.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Teknolojik Gereksinimler
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Vite**: Hızlı geliştirme sunucusu ve üretim yapılandırması sağlayan modern bir build aracıdır.
+- **TypeScript**: JavaScript'in tip güvenli bir versiyonudur.
+- **TanStack Query (React Query)**: API ile etkileşim kuran, veri önbellekleme ve güncellemeyi sağlayan bir kütüphanedir.
+- **MUI (Material UI)**: Uygulamanın UI bileşenlerini oluşturmak için kullanılan popüler bir React UI kütüphanesidir.
+- **styled-components**: CSS-in-JS ile stil yazmanızı sağlayan bir kütüphanedir.
+- **React Context API**: Global state yönetimi için kullanılan React'in dahili state yönetim aracıdır.
+
+## Proje Yapısı
