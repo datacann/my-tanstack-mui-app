@@ -38,4 +38,4 @@ Bu proje, **Vite**, **TypeScript** ve **TanStack Query** (önceden React Query) 
 - **styled-components**: CSS-in-JS ile stil yazmanızı sağlayan bir kütüphanedir.
 - **React Context API**: Global state yönetimi için kullanılan React'in dahili state yönetim aracıdır.
 
-## Proje Yapısı
+(https://my-tanstack-mui-bdytpi82x-datacanns-projects.vercel.app/)
